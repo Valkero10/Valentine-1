@@ -14,36 +14,75 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: pink;
+    background-color: #ffc0cb;
     font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
 }
 
 h1 {
     font-size: 48px;
     color: black;
+    margin-bottom: 20px;
 }
 
 p {
     font-size: 24px;
     color: black;
-    margin-top: 20px;
+    margin: 10px 0;
+}
+
+/* Corazones flotando */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 18px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.7; }
+    100% { transform: translateY(-110vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Música (puede requerir toque en iPhone) -->
 <iframe width="0" height="0"
 src="https://www.youtube.com/embed/817P8W8-mGE?autoplay=1&loop=1&playlist=817P8W8-mGE"
 frameborder="0"
 allow="autoplay">
 </iframe>
 
-<div>
+<div class="container">
     <h1>She said yes 🤍</h1>
     <p>Rhea, you just made my world magical ✨</p>
-    <p>See you soon babe, Happy Valentines Day!!!</p>
+    <p>This is only the beginning of our forever 💍</p>
 </div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "🤍";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 10 + 16 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 700);
+</script>
 
 </body>
 </html>
