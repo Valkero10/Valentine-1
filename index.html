@@ -9,7 +9,7 @@ body {
     margin: 0;
     text-align: center;
     font-family: Arial;
-    background: linear-gradient(to bottom, #ffb6d9, #ff69b4);
+    background-color: #ffc0cb; /* Rosado suave */
     overflow: hidden;
     color: white;
 }
@@ -48,7 +48,7 @@ button {
 
 <body>
 
-<!-- Música Perfect (YouTube oculto) -->
+<!-- Música desde YouTube -->
 <iframe width="0" height="0"
 src="https://www.youtube.com/embed/817P8W8-mGE?autoplay=1&loop=1&playlist=817P8W8-mGE"
 frameborder="0"
@@ -73,7 +73,7 @@ noBtn.addEventListener("mouseover", function() {
     noBtn.style.left = Math.random() * window.innerWidth + "px";
 });
 
-/* Corazones */
+/* Crear corazones */
 function createHeart() {
     const heart = document.createElement("div");
     heart.className = "heart";
