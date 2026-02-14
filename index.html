@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rhea 💘</title>
+
+<style>
+body {
+    margin: 0;
+    text-align: center;
+    font-family: Arial;
+    background: linear-gradient(to bottom, #ffb6d9, #ff69b4);
+    overflow: hidden;
+    color: white;
+}
+
+h1 {
+    margin-top: 120px;
+    font-size: 45px;
+}
+
+button {
+    font-size: 22px;
+    padding: 12px 25px;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+}
+
+#noBtn {
+    position: absolute;
+}
+
+/* Corazones flotando */
+.heart {
+    position: fixed;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Música Perfect (YouTube oculto) -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/817P8W8-mGE?autoplay=1&loop=1&playlist=817P8W8-mGE"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<h1>Rhea, do you wanna be my Valentine? 💖</h1>
+
+<button onclick="yesClicked()">YES 💘</button>
+<button id="noBtn">NO 😏</button>
+
+<script>
+
+function yesClicked() {
+    window.location.href = "yes.html";
+}
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function() {
+    noBtn.style.top = Math.random() * window.innerHeight + "px";
+    noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+
+/* Corazones */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 300);
+
+</script>
+
+</body>
+</html>
