@@ -19,8 +19,8 @@ h1 {
 }
 
 button {
-    font-size: 28px;   /* MÁS GRANDE */
-    padding: 20px 45px; /* MÁS GRANDE */
+    font-size: 28px;
+    padding: 20px 45px;
     margin: 25px;
     cursor: pointer;
     border-radius: 10px;
@@ -43,23 +43,14 @@ button {
     0% { transform: translateY(100vh); opacity: 1; }
     100% { transform: translateY(-10vh); opacity: 0; }
 }
-
-/* Mensaje inicial */
-.tap-message {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    font-size: 18px;
-    color: black;
-}
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 Música romántica -->
+<!-- 🎵 Música desde tu propio repositorio -->
 <audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c9c65a9f3.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <h1>Rhea, do you wanna be my Valentine? 💖</h1>
@@ -70,14 +61,12 @@ button {
 
 <button id="noBtn">NO 😏</button>
 
-<div class="tap-message">Tap anywhere to start the music 🤍</div>
-
 <script>
 
-/* 🎵 Música al primer toque (funciona en iPhone) */
+/* 🎵 Música inicia al primer toque (sin mensaje visible) */
 const music = document.getElementById("bgMusic");
 
-document.body.addEventListener("click", function() {
+document.addEventListener("click", function() {
     music.play();
 }, { once: true });
 
