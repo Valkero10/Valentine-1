@@ -2,85 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>She Said Yes 🤍</title>
+<title>Rhea 💖</title>
 
 <style>
 body {
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     background-color: pink;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
+    text-align: center;
     overflow: hidden;
 }
 
 h1 {
-    font-size: 70px;
+    margin-top: 150px;
+    font-size: 60px;
     color: black;
 }
 
 p {
-    font-size: 35px;
+    font-size: 28px;
     color: black;
+    margin-top: 20px;
 }
 
-/* Corazones */
+button {
+    margin-top: 40px;
+    font-size: 26px;
+    padding: 18px 40px;
+    border-radius: 12px;
+    border: 2px solid black;
+    background: white;
+    cursor: pointer;
+}
+
+/* Corazones flotando */
 .heart {
     position: fixed;
-    bottom: -20px;
     font-size: 25px;
-    animation: floatUp 6s linear infinite;
+    animation: float 6s linear infinite;
 }
 
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-110vh); opacity: 0; }
-}
-
-.tap-message {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    font-size: 18px;
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- 🎵 Música -->
 <audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c9c65a9f3.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div>
-    <h1>YAY!!! I knew you would say YES 🤍</h1>
-    <p>You just made me the happiest person today ✨</p>
-    <p>Now you officially owe me a date 🍓</p>
-</div>
+<h1>She said YES 💘</h1>
 
-<div class="tap-message">Tap anywhere to start the music 🤍</div>
-
-<script>
-const music = document.getElementById("bgMusic");
-
-document.body.addEventListener("click", function() {
-    music.play();
-}, { once: true });
-
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "🤍";
-    heart.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 6000);
-}
-
-setInterval(createHeart, 600);
-</script>
-
-</body>
-</html>
+<p>
+Rhea, you just made me the happiest pers
